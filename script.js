@@ -1,34 +1,23 @@
-// Seleksi elemen HTML
-const suhuInput = document.getElementById("suhu");
-const jenisSuhuSelect = document.getElementById("jenisSuhu");
-const kalkulatorButton = document.getElementById("kalkulator");
-const hasilElement = document.getElementById("hasil");
+document.getElementById('convert').onclick = tempConvert;
+document.getElementById('clear').onclick = clearForm;
 
-// Fungsi konversi suhu dari Celcius ke Fahrenheit
-function celciusToFahrenheit(celcius) {
-  return (celcius * 9/5) + 32;
+function tempConvert() {
+
+    var fahrenheit = document.getElementById("fahrenheit").value;
+    var celsius = document.getElementById("celsius").value;
+
+    if (fahrenheit != '') {
+         celsius = (parseFloat(fahrenheit) -32) /1.8;
+    } else {
+        fahrenheit = (parseFloat(celsius) * 1.8) + 32;
+    }
+
+
+    document.getElementById('fahrenheit').value = parseFloat(fahrenheit).toFixed(1);
+    document.getElementById('celsius').value = parseFloat(celsius).toFixed(1);
 }
 
-// Fungsi konversi suhu dari Fahrenheit ke Celcius
-function fahrenheitToCelcius(fahrenheit) {
-  return (fahrenheit - 32) * 5/9;
+function clearForm() {
+    document.getElementById('fahrenheit').value = '';
+    document.getElementById('celsius').value = '';
 }
-
-// Fungsi utama kalkulator suhu
-function kalkulatorSuhu() {
-  // Ambil nilai suhu dari input pengguna
-  const suhu = parseFloat(suhuInput.value);
-  const jenisSuhu = jenisSuhuSelect.value;
-
-  // Lakukan konversi suhu
-  if (jenisSuhu === "celcius") {
-    const hasil = celciusToFahrenheit(suhu);
-    hasilElement.innerHTML = `${suhu}°C = ${hasil}°F`;
-  } else if (jenisSuhu === "fahrenheit") {
-    const hasil = fahrenheitToCelcius(suhu);
-    hasilElement.innerHTML = `${suhu}°F = ${hasil}°C`;
-  }
-}
-
-// Tambahkan event listener ke tombol kalkulator
-kalkulatorButton.addEventListener("click", kalkulatorSuhu);
