@@ -1,0 +1,52 @@
+/* Style untuk kalkulator suhu */
+.kalkulator-suhu {
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style untuk input suhu */
+  .kalkulator-suhu input[type="number"] {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style untuk select jenis suhu */
+  .kalkulator-suhu select {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style untuk tombol kalkulator */
+  .kalkulator-suhu button {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .kalkulator-suhu button:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Style untuk hasil kalkulator */
+  .kalkulator-suhu #hasil {
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+    margin-top: 20px;
+  }
